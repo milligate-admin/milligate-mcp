@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+import express from "express";
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 const server = new Server(
   { name: "milligate-mcp-server", version: "1.0.0" },
@@ -48,11 +52,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   throw new Error(`Unknown tool: ${request.params.name}`);
 });
 
-async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-}
+let transport;
 
-main().catch(() => {
-  process.exit(1);
+app.get("/sse", async (req, res) => {
+  transport = new SSEServerTransport("/messages", res);
+  await server.connect(transport);
+});
+
+app.post("/messages", async (req, res) => {
+  if (transport) {
+    await transport.handlePostMessage(req, res);
+  } else {
+    res.status(400).send("No active SSE transport session");
+  }
+});
+
+app.listen(port, () => {
+  console.log(`MilliGate MCP SSE Server running on port ${port}`);
 });

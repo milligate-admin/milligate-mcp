@@ -12,7 +12,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.0"
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
