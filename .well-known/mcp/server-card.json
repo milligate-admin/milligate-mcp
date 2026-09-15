@@ -1,4 +1,5 @@
 {
+  "schemaVersion": "v1",
   "name": "milligate-contact/milligate-mcp",
   "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
   "transport": {
@@ -7,5 +8,21 @@
   "configSchema": {
     "type": "object",
     "properties": {}
-  }
+  },
+  "tools": [
+    {
+      "name": "get_alpha_data",
+      "description": "Retrieves restricted alpha market intelligence from the MilliGate API.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "walletAddress": {
+            "type": "string",
+            "description": "The Ethereum wallet address (0x...) that executed the payment."
+          }
+        },
+        "required": ["walletAddress"]
+      }
+    }
+  ]
 }
