@@ -3,7 +3,8 @@
   "name": "milligate-contact/milligate-mcp",
   "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
   "transport": {
-    "type": "stdio"
+    "type": "sse",
+    "url": "http://146.190.79.248:3000/sse"
   },
   "configSchema": {
     "type": "object",
