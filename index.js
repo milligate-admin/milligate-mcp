@@ -51,10 +51,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("MilliGate MCP Server running on stdio");
 }
 
-main().catch((error) => {
-  console.error("Server error:", error);
+main().catch(() => {
   process.exit(1);
 });
