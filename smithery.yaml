@@ -1,8 +1,8 @@
 startCommand:
   type: stdio
-  command: npm
+  command: node
   args:
-    - start
+    - index.js
 build:
   command: npm
   args:
