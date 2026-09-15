@@ -1,0 +1,13 @@
+{
+  "name": "milligate-mcp",
+  "displayName": "milligate-mcp-server",
+  "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
+  "version": "1.0.0",
+  "transport": {
+    "type": "stdio"
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}
