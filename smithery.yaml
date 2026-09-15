@@ -3,3 +3,7 @@ startCommand:
   command: node
   args:
     - index.js
+build:
+  command: npm
+  args:
+    - install
