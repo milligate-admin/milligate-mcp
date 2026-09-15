@@ -3,6 +3,9 @@ startCommand:
   command: node
   args:
     - index.js
+configSchema:
+  type: object
+  properties: {}
 build:
   command: npm
   args:
