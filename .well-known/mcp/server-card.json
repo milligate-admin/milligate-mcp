@@ -4,7 +4,7 @@
   "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
   "transport": {
     "type": "sse",
-    "url": "http://146.190.79.248:3000/sse"
+    "url": "https://respond-calcium-nine-calling.trycloudflare.com/sse"
   },
   "configSchema": {
     "type": "object",
