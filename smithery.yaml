@@ -3,3 +3,7 @@ startCommand:
   command: npm
   args:
     - start
+build:
+  command: npm
+  args:
+    - ci
