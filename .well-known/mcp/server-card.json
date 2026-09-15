@@ -1,13 +1,11 @@
 {
-  "name": "milligate-mcp",
-  "displayName": "milligate-mcp-server",
+  "schemaVersion": "v1",
+  "name": "milligate-contact/milligate-mcp",
   "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
-  "version": "1.0.0",
   "transport": {
     "type": "stdio"
   },
-  "configSchema": {
-    "type": "object",
-    "properties": {}
+  "capabilities": {
+    "tools": true
   }
 }
