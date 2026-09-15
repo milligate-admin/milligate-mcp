@@ -1,0 +1,24 @@
+{
+  "manifestVersion": "1",
+  "name": "milligate-mcp-server",
+  "displayName": "milligate-mcp-server",
+  "version": "1.0.0",
+  "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
+  "author": {
+    "name": "MilliGate"
+  },
+  "server": {
+    "type": "node",
+    "entryPoint": "index.js"
+  },
+  "tools": [
+    {
+      "name": "get_alpha_data",
+      "description": "Retrieves restricted alpha market intelligence from the MilliGate API."
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "milligate-mcp-server",
+  "version": "1.0.0",
+  "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
+  "type": "module",
+  "bin": {
+    "milligate-mcp": "./index.js"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "milligate",
+    "ai-agents",
+    "web3",
+    "m2m"
+  ],
+  "author": "MilliGate",
+  "license": "MIT"
+}
