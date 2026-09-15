@@ -2,11 +2,7 @@ startCommand:
   type: stdio
   command: node
   args:
-    - index.js
+    - dist/index.js
 configSchema:
   type: object
   properties: {}
-build:
-  command: npm
-  args:
-    - ci
