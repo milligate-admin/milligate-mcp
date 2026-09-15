@@ -1,10 +1,6 @@
 startCommand:
   type: sse
-  url: https://seu-dominio-ou-ip:3000/sse
+  url: http://146.190.79.248:3000/sse
 configSchema:
   type: object
   properties: {}
-build:
-  command: npm
-  args:
-    - install
