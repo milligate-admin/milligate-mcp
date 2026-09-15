@@ -1,9 +1,5 @@
-version: '1.0'
 startCommand:
   type: stdio
   command: node
   args:
     - index.js
-configSchema:
-  type: object
-  properties: {}
