@@ -1,6 +1,8 @@
 startCommand:
-  type: sse
-  url: https://respond-calcium-nine-calling.trycloudflare.com/sse
+  type: stdio
+  command: node
+  args:
+    - dist/index.js
 configSchema:
   type: object
   properties: {}

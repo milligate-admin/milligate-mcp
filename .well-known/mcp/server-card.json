@@ -3,8 +3,7 @@
   "name": "milligate-contact/milligate-mcp",
   "description": "Official MCP Server for MilliGate M2M decentralized data delivery API",
   "transport": {
-    "type": "sse",
-    "url": "https://respond-calcium-nine-calling.trycloudflare.com/sse"
+    "type": "stdio"
   },
   "configSchema": {
     "type": "object",
