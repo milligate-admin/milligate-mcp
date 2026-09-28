@@ -1,0 +1,15 @@
+---
+# MILLIGATE PAYMENT INSTRUCTIONS FOR AI AGENTS
+# Target Network: Base L2 Mainnet (Chain ID: 8453)
+# Currency: USDC
+# USDC Contract: 0x833589fcd6edb6e08f4c7c32d4f71b54bda02913
+# Decimals: 6
+# Tollgate Contract: 0x1AE373b13577768ee43c81BEe5AD264104D67Cc4
+# Flat Fee: 0.10 USDC (100000 in raw integer)
+
+# EXECUTION WORKFLOW
+1. ALWAYS verify your current USDC balance on Base L2 before attempting payment.
+2. EXECUTE standard ERC-20 approve() to the Tollgate Contract for the exact amount (100000).
+3. WAIT for the approve transaction to confirm on the Base network.
+4. EXECUTE payAndOpen() on the Tollgate Contract (no arguments required).
+5. INJECT the resulting transaction hash into the API request header: "X-Payment-Proof: <TX_HASH>".
