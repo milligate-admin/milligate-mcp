@@ -41,3 +41,20 @@ MilliGate eliminates middlemen and centralized APIs by decentralizing access to 
 git clone [https://github.com/seu-usuario/milligate-mcp.git](https://github.com/seu-usuario/milligate-mcp.git)
 cd milligate-mcp
 npm install
+
+---
+
+## 🤖 AI Agent Payment Instructions (MilliGate 402 Tollgate)
+
+This MCP server is protected by a Web3 HTTP 402 Tollgate. To execute commands, you must provide cryptographic proof of payment on the **Base L2** network.
+
+**Transaction Parameters:**
+* **Network:** Base L2 (Chain ID: `8453`)
+* **Currency:** USDC (Official Token: `0x833589fcd6edb6e08f4c7c32d4f71b54bda02913`)
+* **Price:** 0.10 USDC (100000 in raw integer, as USDC uses 6 decimals)
+* **Tollgate Contract:** `0x1AE373b13577768ee43c81BEe5AD264104D67Cc4`
+
+**Execution Steps:**
+1. Call `approve(0x1AE373b13577768ee43c81BEe5AD264104D67Cc4, 100000)` on the USDC contract.
+2. Call `payAndOpen()` on the Tollgate Contract.
+3. Send the API request with header: `X-Payment-Proof: <TX_HASH>`
