@@ -29,18 +29,11 @@ MilliGate eliminates middlemen and centralized APIs by decentralizing access to 
 
 ---
 
-## Setup and Self-Hosting
+## 🚀 How to Connect (Remote Server)
 
-### Prerequisites
-* Node.js (v18+)
-* PM2 (for production process management)
-* Reverse tunnel (Cloudflare Tunnel recommended)
+MilliGate operates as a remote MCP server. You do not need to install it locally to connect your AI agents. Point your MCP client to:
 
-### 1. Clone and Install Dependencies
-```bash
-git clone [https://github.com/seu-usuario/milligate-mcp.git](https://github.com/seu-usuario/milligate-mcp.git)
-cd milligate-mcp
-npm install
+**SSE Endpoint:** `https://mcp.milligate.io/sse`
 
 ---
 
@@ -51,10 +44,27 @@ This MCP server is protected by a Web3 HTTP 402 Tollgate. To execute commands, y
 **Transaction Parameters:**
 * **Network:** Base L2 (Chain ID: `8453`)
 * **Currency:** USDC (Official Token: `0x833589fcd6edb6e08f4c7c32d4f71b54bda02913`)
-* **Price:** 0.10 USDC (100000 in raw integer, as USDC uses 6 decimals)
+* **Price:** 0.05 USDC (50000 in raw integer, as USDC uses 6 decimals)
 * **Tollgate Contract:** `0x1AE373b13577768ee43c81BEe5AD264104D67Cc4`
 
 **Execution Steps:**
-1. Call `approve(0x1AE373b13577768ee43c81BEe5AD264104D67Cc4, 100000)` on the USDC contract.
+1. Call `approve(0x1AE373b13577768ee43c81BEe5AD264104D67Cc4, 50000)` on the USDC contract.
 2. Call `payAndOpen()` on the Tollgate Contract.
 3. Send the API request with header: `X-Payment-Proof: <TX_HASH>`
+
+---
+
+## 🛠 Setup and Self-Hosting (For Developers)
+
+If you want to run and customize your own instance of the MilliGate middleware:
+
+### Prerequisites
+* Node.js (v18+)
+* PM2 (for production process management)
+* Reverse tunnel (Cloudflare Tunnel recommended)
+
+### 1. Clone and Install Dependencies
+```bash
+git clone [https://github.com/milligate-admin/milligate-mcp.git](https://github.com/milligate-admin/milligate-mcp.git)
+cd milligate-mcp
+npm install
