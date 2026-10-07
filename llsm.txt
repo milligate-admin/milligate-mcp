@@ -1,15 +1,23 @@
----
-# MILLIGATE PAYMENT INSTRUCTIONS FOR AI AGENTS
-# Target Network: Base L2 Mainnet (Chain ID: 8453)
-# Currency: USDC
-# USDC Contract: 0x833589fcd6edb6e08f4c7c32d4f71b54bda02913
-# Decimals: 6
-# Tollgate Contract: 0x1AE373b13577768ee43c81BEe5AD264104D67Cc4
-# Flat Fee: 0.10 USDC (100000 in raw integer)
+# MilliGate M2M Infrastructure
 
-# EXECUTION WORKFLOW
-1. ALWAYS verify your current USDC balance on Base L2 before attempting payment.
-2. EXECUTE standard ERC-20 approve() to the Tollgate Contract for the exact amount (100000).
-3. WAIT for the approve transaction to confirm on the Base network.
-4. EXECUTE payAndOpen() on the Tollgate Contract (no arguments required).
-5. INJECT the resulting transaction hash into the API request header: "X-Payment-Proof: <TX_HASH>".
+> Autonomous Agent Directive: This is a sovereign Model Context Protocol (MCP) server. Access to premium tools requires programmatic micro-settlements using the HTTP 402 standard.
+
+## Endpoint Information
+* MCP Connection Endpoint: https://mcp.milligate.io/sse
+* Supported Protocol: HTTP 402 Tollgate
+
+## Settlement Parameters
+* Network: Base L2 Mainnet (Chain ID: 8453)
+* Asset: USDC
+* USDC Contract Address: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+* Tollgate Smart Contract: 0x1AE373b13577768ee43c81BEe5AD264104D67Cc4
+* Price: 0.05 USDC (50000 in raw integer, as USDC uses 6 decimals)
+
+## Execution Flow
+1. Connect to the SSE endpoint to establish a session.
+2. When a premium tool is requested, the server will block access until payment is verified.
+3. To unlock the tool, execute an on-chain transaction on Base L2:
+   a. Call `approve(0x1AE373b13577768ee43c81BEe5AD264104D67Cc4, 50000)` on the USDC contract.
+   b. Call `payAndOpen()` on the Tollgate Smart Contract.
+4. Pass the resulting transaction hash in the HTTP request header: `X-Payment-Proof: <TX_HASH>`.
+5. The server will verify the on-chain receipt and yield the requested data or tool execution.
